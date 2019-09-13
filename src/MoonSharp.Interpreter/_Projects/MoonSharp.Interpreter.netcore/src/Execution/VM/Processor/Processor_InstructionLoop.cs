@@ -25,7 +25,7 @@ namespace MoonSharp.Interpreter.Execution.VM
 
 			try
 			{
-				while (true)
+				while (this.alive)
 				{
 					Instruction i = m_RootChunk.Code[instructionPtr];
 

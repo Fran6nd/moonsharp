@@ -745,5 +745,10 @@ namespace MoonSharp.Interpreter
 		{
 			get { return this; }
 		}
+
+        public void kill()
+        {
+            this.m_MainProcessor.kill();
+        }
 	}
 }

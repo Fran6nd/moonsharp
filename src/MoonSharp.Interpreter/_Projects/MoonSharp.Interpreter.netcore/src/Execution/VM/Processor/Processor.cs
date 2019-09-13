@@ -19,6 +19,7 @@ namespace MoonSharp.Interpreter.Execution.VM
 		Processor m_Parent = null;
 		CoroutineState m_State;
 		bool m_CanYield = true;
+        bool alive = true;
 		int m_SavedInstructionPtr = -1;
 		DebugContext m_Debug;
 
@@ -44,7 +45,10 @@ namespace MoonSharp.Interpreter.Execution.VM
 			m_State = CoroutineState.NotStarted;
 		}
 
-
+        public void kill()
+        {
+            this.alive = false;
+        }
 
 		public DynValue Call(DynValue function, DynValue[] args)
 		{
